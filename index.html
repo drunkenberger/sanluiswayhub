@@ -1,0 +1,2946 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>San Luis Way | Alianzas B2B para Negocios en San Luis Potosí</title>
+    <meta name="description" content="Únete al ecosistema digital que conecta tu restaurante, venue, departamento o negocio con expatriados, nómadas digitales y familias locales en San Luis Potosí.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=Bebas+Neue&family=Righteous&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --color-primary: #1E3A5F;
+            --color-primary-dark: #152A45;
+            --color-accent: #FFCB05;
+            --color-accent-light: #FFD700;
+            --color-bg: #FFF8F0;
+            --color-bg-alt: #FFF3E0;
+            --color-text: #1A1A1A;
+            --color-text-light: #5A5A5A;
+            --color-white: #FFFFFF;
+            --font-display: 'Bebas Neue', sans-serif;
+            --font-display-alt: 'Righteous', cursive;
+            --font-body: 'DM Sans', -apple-system, sans-serif;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Utility Classes */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-alt {
+            background-color: var(--color-bg-alt);
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-family: var(--font-display);
+            font-weight: 400;
+            line-height: 1.1;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            font-size: clamp(3rem, 6vw, 5rem);
+            color: var(--color-primary-dark);
+        }
+
+        h2 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            color: var(--color-primary-dark);
+            margin-bottom: 24px;
+        }
+
+        h3 {
+            font-size: clamp(1.5rem, 2.5vw, 2rem);
+            color: var(--color-primary);
+        }
+
+        h4 {
+            font-size: 1.25rem;
+            letter-spacing: 1px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: var(--color-text-light);
+        }
+
+        /* Righteous accent text */
+        .accent-text {
+            font-family: var(--font-display-alt);
+            letter-spacing: 1px;
+        }
+
+        /* Navigation - Retro 60s Style */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 0;
+            transition: var(--transition);
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+
+        .nav.scrolled {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+            backdrop-filter: none;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+            padding: 0;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 0;
+            background: var(--color-accent);
+            padding: 12px 24px;
+            clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);
+            position: relative;
+        }
+
+        .nav-brand::before {
+            content: '★';
+            font-size: 1.5rem;
+            color: var(--color-primary-dark);
+            margin-right: 12px;
+            animation: spin 10s linear infinite;
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .logo {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 400;
+            color: var(--color-primary-dark);
+            text-decoration: none;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            line-height: 1;
+        }
+
+        .logo-subtitle {
+            font-family: 'Righteous', cursive;
+            font-size: 0.7rem;
+            color: var(--color-primary);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            display: block;
+            margin-top: 2px;
+        }
+
+        .nav-tagline {
+            font-family: 'Righteous', cursive;
+            color: var(--color-accent);
+            font-size: 1rem;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 0 rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .nav-tagline::before,
+        .nav-tagline::after {
+            content: '✦';
+            font-size: 0.75rem;
+        }
+
+        .nav-cta {
+            background: var(--color-accent);
+            color: var(--color-primary-dark);
+            padding: 14px 32px;
+            border-radius: 0;
+            text-decoration: none;
+            font-family: 'Bebas Neue', sans-serif;
+            font-weight: 400;
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: var(--transition);
+            position: relative;
+            clip-path: polygon(5% 0, 100% 0, 100% 100%, 0% 100%);
+        }
+
+        .nav-cta:hover {
+            background: var(--color-accent-light);
+            transform: scale(1.05);
+        }
+
+        /* Retro decorative elements */
+        .nav-decor {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            gap: 8px;
+        }
+
+        .nav-decor-left {
+            left: 200px;
+        }
+
+        .nav-decor-right {
+            right: 200px;
+        }
+
+        .starburst {
+            width: 30px;
+            height: 30px;
+            background: var(--color-accent);
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .starburst:nth-child(2) {
+            animation-delay: 0.5s;
+            opacity: 0.7;
+            width: 20px;
+            height: 20px;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        /* Retro Promo Banner */
+        .retro-banner {
+            position: fixed;
+            top: 60px;
+            left: 0;
+            right: 0;
+            z-index: 999;
+            background: var(--color-accent);
+            padding: 8px 0;
+            overflow: hidden;
+        }
+
+        .retro-banner-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 16px;
+            animation: marquee 20s linear infinite;
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(0); }
+        }
+
+        .retro-star {
+            color: var(--color-primary-dark);
+            font-size: 1rem;
+            animation: spin 4s linear infinite;
+        }
+
+        .retro-text {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1rem;
+            color: var(--color-primary-dark);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .retro-text-secondary {
+            font-family: 'Righteous', cursive;
+            font-size: 0.85rem;
+            color: var(--color-primary);
+            letter-spacing: 1px;
+        }
+
+        .retro-divider {
+            color: var(--color-primary-dark);
+            font-size: 1.2rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            background: linear-gradient(135deg, var(--color-bg) 0%, var(--color-bg-alt) 100%);
+            overflow: hidden;
+            padding-top: 100px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 80%;
+            height: 150%;
+            background: radial-gradient(ellipse, rgba(15, 76, 92, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 200px;
+            background: linear-gradient(to top, var(--color-bg), transparent);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            padding-top: 80px;
+        }
+
+        .hero-text {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--color-white);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-family: var(--font-display-alt);
+            font-size: 0.875rem;
+            font-weight: 400;
+            color: var(--color-primary);
+            margin-bottom: 24px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            letter-spacing: 1px;
+        }
+
+        .hero-badge::before {
+            content: '✦';
+            color: var(--color-accent);
+        }
+
+        .hero h1 {
+            margin-bottom: 24px;
+        }
+
+        .hero h1 span {
+            color: var(--color-accent);
+            position: relative;
+        }
+
+        .hero-subtitle {
+            font-family: var(--font-display-alt);
+            font-size: 1.25rem;
+            color: var(--color-text-light);
+            margin-bottom: 40px;
+            max-width: 500px;
+            letter-spacing: 0.5px;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: var(--color-primary);
+            color: var(--color-white);
+            padding: 16px 36px;
+            border-radius: 0;
+            text-decoration: none;
+            font-family: var(--font-display);
+            font-weight: 400;
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary:hover {
+            background: var(--color-primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(15, 76, 92, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--color-primary);
+            padding: 16px 36px;
+            border-radius: 0;
+            text-decoration: none;
+            font-family: var(--font-display);
+            font-weight: 400;
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border: 2px solid var(--color-primary);
+            transition: var(--transition);
+        }
+
+        .btn-secondary:hover {
+            background: var(--color-primary);
+            color: var(--color-white);
+        }
+
+        .hero-visual {
+            position: relative;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        .hero-card {
+            background: var(--color-white);
+            border-radius: 0;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-card-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 24px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid var(--color-bg-alt);
+        }
+
+        .hero-card-icon {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+            border-radius: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+
+        .hero-card-title {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            color: var(--color-primary-dark);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .hero-card-subtitle {
+            font-family: var(--font-display-alt);
+            font-size: 0.875rem;
+            color: var(--color-text-light);
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 400;
+            color: var(--color-primary);
+            letter-spacing: 1px;
+        }
+
+        .stat-label {
+            font-family: var(--font-display-alt);
+            font-size: 0.875rem;
+            color: var(--color-text-light);
+        }
+
+        .floating-badge {
+            position: absolute;
+            background: var(--color-accent);
+            color: var(--color-primary-dark);
+            padding: 12px 20px;
+            border-radius: 0;
+            font-family: var(--font-display);
+            font-weight: 400;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            box-shadow: 0 10px 30px rgba(232, 170, 66, 0.3);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .floating-badge.top {
+            top: -20px;
+            right: -20px;
+        }
+
+        .floating-badge.bottom {
+            bottom: -20px;
+            left: -20px;
+            background: var(--color-white);
+            color: var(--color-primary);
+            border: 2px solid var(--color-primary);
+            animation-delay: 1.5s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Problem Section */
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            margin-top: 60px;
+        }
+
+        .problem-card {
+            background: var(--color-white);
+            padding: 40px;
+            border-radius: 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .problem-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--color-accent), var(--color-accent-light));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: var(--transition);
+        }
+
+        .problem-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+        }
+
+        .problem-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .problem-icon {
+            width: 64px;
+            height: 64px;
+            background: var(--color-bg-alt);
+            border-radius: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            margin-bottom: 24px;
+        }
+
+        .problem-card h3 {
+            margin-bottom: 12px;
+        }
+
+        .problem-card p {
+            font-family: var(--font-display-alt);
+        }
+
+        /* Solution Section */
+        .solution-header {
+            max-width: 700px;
+            margin: 0 auto 60px;
+        }
+
+        .trust-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+            color: var(--color-white);
+            padding: 16px 32px;
+            border-radius: 0;
+            margin-bottom: 32px;
+            font-family: var(--font-display);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .trust-badge-icon {
+            font-size: 24px;
+        }
+
+        .solution-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .feature-card {
+            background: var(--color-white);
+            padding: 32px;
+            border-radius: 0;
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            transition: var(--transition);
+            border: 1px solid transparent;
+        }
+
+        .feature-card:hover {
+            border-color: var(--color-accent);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+        }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--color-bg-alt);
+            border-radius: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .feature-card p {
+            font-family: var(--font-display-alt);
+            font-size: 0.95rem;
+        }
+
+        .feature-card h4 {
+            font-family: var(--font-display);
+            font-weight: 400;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            color: var(--color-primary-dark);
+        }
+
+        .feature-card p {
+            font-size: 0.95rem;
+        }
+
+        /* Tech Advantage Section */
+        .tech-section {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tech-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+
+        .tech-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .tech-header h2 {
+            color: var(--color-white);
+            margin-bottom: 16px;
+        }
+
+        .tech-header p {
+            color: rgba(255,255,255,0.8);
+            max-width: 600px;
+            margin: 0 auto;
+            font-family: var(--font-display-alt);
+        }
+
+        .tech-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--color-accent);
+            color: var(--color-primary-dark);
+            padding: 12px 24px;
+            margin-bottom: 24px;
+            font-family: var(--font-display);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+
+        .tech-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 40px 32px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.15);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .tech-card:hover {
+            background: rgba(255,255,255,0.15);
+            transform: translateY(-5px);
+            border-color: var(--color-accent);
+        }
+
+        .tech-card-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--color-accent);
+            margin: 0 auto 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        }
+
+        .tech-card h4 {
+            color: var(--color-white);
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+        }
+
+        .tech-card p {
+            color: rgba(255,255,255,0.85);
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .tech-card-highlight {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .tech-card-highlight span {
+            font-family: var(--font-display-alt);
+            color: var(--color-accent);
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 900px) {
+            .tech-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+        }
+
+        /* Benefits Section */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .benefits-content h2 {
+            margin-bottom: 16px;
+        }
+
+        .benefits-content > p {
+            margin-bottom: 32px;
+        }
+
+        .benefit-list {
+            list-style: none;
+        }
+
+        .benefit-item {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 24px;
+            align-items: flex-start;
+        }
+
+        .benefit-check {
+            width: 28px;
+            height: 28px;
+            background: var(--color-accent);
+            border-radius: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 14px;
+        }
+
+        .benefit-text h4 {
+            font-family: var(--font-display);
+            font-weight: 400;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+            color: var(--color-primary-dark);
+        }
+
+        .benefit-text p {
+            font-size: 0.95rem;
+        }
+
+        .benefits-visual {
+            position: relative;
+        }
+
+        .benefits-image {
+            background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+            border-radius: 0;
+            padding: 48px;
+            color: var(--color-white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .benefits-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: radial-gradient(circle at top right, rgba(232, 170, 66, 0.2), transparent);
+        }
+
+        .audience-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 24px;
+            border-radius: 0;
+            margin-bottom: 16px;
+        }
+
+        .audience-card:last-child {
+            margin-bottom: 0;
+        }
+
+        .audience-card h4 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+        }
+
+        .audience-card p {
+            font-family: var(--font-display-alt);
+            color: rgba(255,255,255,0.8);
+            font-size: 0.95rem;
+        }
+
+        /* Investment Section */
+        .investment-intro {
+            max-width: 800px;
+            margin: 0 auto 60px;
+        }
+
+        .investment-diagram {
+            background: var(--color-white);
+            border-radius: 0;
+            padding: 48px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.06);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .flow-diagram {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .flow-step {
+            flex: 1;
+            min-width: 150px;
+            text-align: center;
+            padding: 24px 16px;
+            background: var(--color-bg-alt);
+            border-radius: 0;
+            position: relative;
+        }
+
+        .flow-step.highlight {
+            background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+            color: var(--color-white);
+        }
+
+        .flow-step.highlight p {
+            color: rgba(255,255,255,0.8);
+        }
+
+        .flow-icon {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .flow-step h4 {
+            font-family: var(--font-display);
+            font-weight: 400;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+
+        .flow-step p {
+            font-family: var(--font-display-alt);
+            font-size: 0.85rem;
+        }
+
+        .flow-arrow {
+            font-size: 24px;
+            color: var(--color-accent);
+        }
+
+        .investment-highlight {
+            margin-top: 48px;
+            padding: 32px;
+            background: linear-gradient(135deg, var(--color-accent), var(--color-accent-light));
+            border-radius: 0;
+            text-align: center;
+        }
+
+        .investment-highlight h3 {
+            font-family: var(--font-display);
+            color: var(--color-primary-dark);
+            font-size: 1.75rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .investment-highlight p {
+            font-family: var(--font-display-alt);
+            color: var(--color-primary-dark);
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* Pricing Section */
+        .pricing-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 48px;
+        }
+
+        .tab-btn {
+            padding: 12px 32px;
+            border: none;
+            background: var(--color-white);
+            border-radius: 0;
+            font-family: var(--font-display);
+            font-size: 1rem;
+            font-weight: 400;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--color-text-light);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .tab-btn.active {
+            background: var(--color-primary);
+            color: var(--color-white);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .pricing-card {
+            background: var(--color-white);
+            border-radius: 0;
+            padding: 40px;
+            position: relative;
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+        }
+
+        .pricing-card.featured {
+            border-color: var(--color-accent);
+        }
+
+        .pricing-card.featured::before {
+            content: 'Más Popular';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--color-accent);
+            color: var(--color-primary-dark);
+            padding: 6px 20px;
+            border-radius: 0;
+            font-family: var(--font-display);
+            font-size: 0.875rem;
+            font-weight: 400;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .pricing-name {
+            font-family: var(--font-display);
+            font-size: 1.75rem;
+            color: var(--color-primary-dark);
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .pricing-desc {
+            font-family: var(--font-display-alt);
+            font-size: 0.95rem;
+            color: var(--color-text-light);
+            margin-bottom: 24px;
+        }
+
+        .pricing-price {
+            margin-bottom: 24px;
+        }
+
+        .price-amount {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            font-weight: 400;
+            color: var(--color-primary);
+            letter-spacing: 1px;
+        }
+
+        .price-period {
+            font-family: var(--font-display-alt);
+            font-size: 1rem;
+            color: var(--color-text-light);
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 32px;
+        }
+
+        .pricing-features li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+        }
+
+        .pricing-features li::before {
+            content: '✓';
+            color: var(--color-accent);
+            font-weight: bold;
+        }
+
+        .pricing-cta {
+            width: 100%;
+            padding: 14px 28px;
+            border: none;
+            border-radius: 0;
+            font-family: var(--font-display);
+            font-size: 1rem;
+            font-weight: 400;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .pricing-card:not(.featured) .pricing-cta {
+            background: var(--color-bg-alt);
+            color: var(--color-primary);
+        }
+
+        .pricing-card:not(.featured) .pricing-cta:hover {
+            background: var(--color-primary);
+            color: var(--color-white);
+        }
+
+        .pricing-card.featured .pricing-cta {
+            background: var(--color-primary);
+            color: var(--color-white);
+        }
+
+        .pricing-card.featured .pricing-cta:hover {
+            background: var(--color-primary-dark);
+        }
+
+        /* Comparison Section */
+        .comparison-table {
+            background: var(--color-white);
+            border-radius: 0;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.06);
+            margin-top: 60px;
+        }
+
+        .comparison-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 20px 24px;
+            text-align: left;
+            border-bottom: 1px solid var(--color-bg-alt);
+        }
+
+        .comparison-table th {
+            background: var(--color-primary);
+            color: var(--color-white);
+            font-weight: 600;
+        }
+
+        .comparison-table th:first-child {
+            width: 40%;
+        }
+
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .comparison-table tr:hover td {
+            background: var(--color-bg);
+        }
+
+        .check-yes {
+            color: #22C55E;
+            font-weight: bold;
+        }
+
+        .check-no {
+            color: #EF4444;
+        }
+
+        /* Experiencias Info Section */
+        .experiencias-info {
+            margin-top: 48px;
+        }
+
+        .exp-info-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .exp-info-card {
+            background: var(--color-white);
+            padding: 28px;
+            border-radius: 0;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .exp-info-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        .exp-info-icon {
+            font-size: 36px;
+            margin-bottom: 16px;
+        }
+
+        .exp-info-card h4 {
+            font-family: var(--font-display);
+            font-weight: 400;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--color-primary-dark);
+            margin-bottom: 8px;
+        }
+
+        .exp-info-card p {
+            font-family: var(--font-display-alt);
+            font-size: 0.9rem;
+        }
+
+        .exp-cta-box {
+            background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+            padding: 40px;
+            border-radius: 0;
+            text-align: center;
+            color: var(--color-white);
+        }
+
+        .exp-cta-box h3 {
+            font-family: var(--font-display);
+            font-size: 1.75rem;
+            color: var(--color-white);
+            margin-bottom: 12px;
+            letter-spacing: 2px;
+        }
+
+        .exp-cta-box p {
+            font-family: var(--font-display-alt);
+            color: rgba(255,255,255,0.85);
+            margin-bottom: 24px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .exp-cta-box .btn-primary {
+            background: var(--color-accent);
+            color: var(--color-primary-dark);
+        }
+
+        .exp-cta-box .btn-primary:hover {
+            background: var(--color-accent-light);
+            box-shadow: 0 10px 30px rgba(232, 170, 66, 0.4);
+        }
+
+        /* How it Works Section */
+        .exp-how-it-works {
+            background: var(--color-white);
+            border-radius: 0;
+            padding: 48px;
+            margin-bottom: 40px;
+        }
+
+        .exp-how-it-works h3 {
+            text-align: center;
+            font-family: var(--font-display);
+            font-size: 2rem;
+            color: var(--color-primary-dark);
+            margin-bottom: 40px;
+            letter-spacing: 2px;
+        }
+
+        .how-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 32px;
+        }
+
+        .how-step {
+            text-align: center;
+        }
+
+        .how-step-number {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+            color: var(--color-white);
+            border-radius: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin: 0 auto 16px;
+        }
+
+        .how-step-content h4 {
+            font-family: var(--font-display);
+            font-weight: 400;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--color-primary-dark);
+            margin-bottom: 8px;
+        }
+
+        .how-step-content p {
+            font-family: var(--font-display-alt);
+            font-size: 0.9rem;
+        }
+
+        .experiencias-grid {
+            max-width: 100% !important;
+        }
+
+        /* Experiencias Centro Hero Section */
+        .experiencias-section {
+            background: linear-gradient(135deg, #FEF9F0 0%, #FFF5E6 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .experiencias-section::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(232, 170, 66, 0.15) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .experiencias-hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .exp-hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--color-accent);
+            color: var(--color-primary-dark);
+            padding: 8px 16px;
+            border-radius: 0;
+            font-family: var(--font-display);
+            font-size: 0.9rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .exp-hero-content h2 {
+            font-size: clamp(2rem, 4vw, 2.75rem);
+            margin-bottom: 16px;
+        }
+
+        .exp-hero-subtitle {
+            font-family: var(--font-display-alt);
+            font-size: 1.15rem;
+            color: var(--color-text-light);
+            margin-bottom: 32px;
+            line-height: 1.7;
+        }
+
+        .exp-hero-features {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .exp-feature {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--color-white);
+            padding: 12px 20px;
+            border-radius: 0;
+            font-family: var(--font-display);
+            font-weight: 400;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        }
+
+        .exp-feature-icon {
+            font-size: 1.25rem;
+        }
+
+        .exp-hero-visual {
+            position: relative;
+        }
+
+        .exp-card-stack {
+            position: relative;
+            height: 350px;
+        }
+
+        .exp-card {
+            position: absolute;
+            background: var(--color-white);
+            border-radius: 0;
+            padding: 24px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            width: 280px;
+            transition: var(--transition);
+        }
+
+        .exp-card:hover {
+            transform: translateY(-8px) rotate(0deg) !important;
+            z-index: 10;
+        }
+
+        .exp-card-1 {
+            top: 0;
+            left: 20px;
+            transform: rotate(-3deg);
+            z-index: 3;
+        }
+
+        .exp-card-2 {
+            top: 80px;
+            left: 100px;
+            transform: rotate(2deg);
+            z-index: 2;
+        }
+
+        .exp-card-3 {
+            top: 160px;
+            left: 40px;
+            transform: rotate(-1deg);
+            z-index: 1;
+        }
+
+        .exp-card-day {
+            background: var(--color-primary);
+            color: var(--color-white);
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 0;
+            font-family: var(--font-display);
+            font-size: 0.8rem;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+
+        .exp-card-content strong {
+            display: block;
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--color-primary-dark);
+            margin-bottom: 4px;
+        }
+
+        .exp-card-content p {
+            font-family: var(--font-display-alt);
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+            color: var(--color-white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-section h2 {
+            color: var(--color-white);
+            margin-bottom: 16px;
+        }
+
+        .cta-section p {
+            color: rgba(255,255,255,0.85);
+            font-size: 1.25rem;
+            margin-bottom: 40px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-white {
+            background: var(--color-white);
+            color: var(--color-primary);
+            padding: 16px 36px;
+            border-radius: 0;
+            text-decoration: none;
+            font-family: var(--font-display);
+            font-weight: 400;
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: var(--transition);
+        }
+
+        .btn-white:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .btn-outline-white {
+            background: transparent;
+            color: var(--color-white);
+            padding: 16px 36px;
+            border-radius: 0;
+            text-decoration: none;
+            font-family: var(--font-display);
+            font-weight: 400;
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border: 2px solid rgba(255,255,255,0.5);
+            transition: var(--transition);
+        }
+
+        .btn-outline-white:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: var(--color-white);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--color-primary-dark);
+            color: var(--color-white);
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand h3 {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            margin-bottom: 8px;
+            color: var(--color-white);
+            letter-spacing: 2px;
+        }
+
+        .footer-brand h3 span {
+            color: var(--color-accent);
+        }
+
+        .footer-subtitle {
+            font-family: var(--font-display-alt);
+            font-size: 0.85rem;
+            color: var(--color-accent);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 12px !important;
+        }
+
+        .footer-brand p {
+            color: rgba(255,255,255,0.7);
+            max-width: 300px;
+        }
+
+        .footer h4 {
+            font-family: var(--font-display);
+            font-weight: 400;
+            font-size: 1.25rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            color: var(--color-white);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--color-accent);
+        }
+
+        .footer-bottom {
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-bottom p {
+            color: rgba(255,255,255,0.5);
+            font-size: 0.875rem;
+        }
+
+        /* Contact Form Modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(4px);
+            z-index: 2000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal {
+            background: var(--color-white);
+            border-radius: 0;
+            max-width: 500px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            animation: modalIn 0.3s ease-out;
+        }
+
+        @keyframes modalIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95) translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            border: none;
+            background: var(--color-bg-alt);
+            border-radius: 0;
+            cursor: pointer;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .modal-close:hover {
+            background: var(--color-primary);
+            color: var(--color-white);
+        }
+
+        .modal-content {
+            padding: 48px;
+        }
+
+        .modal h2 {
+            margin-bottom: 8px;
+        }
+
+        .modal > p {
+            margin-bottom: 32px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-family: var(--font-display);
+            font-weight: 400;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--color-text);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px 18px;
+            border: 2px solid var(--color-bg-alt);
+            border-radius: 0;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--color-primary);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 16px;
+            background: var(--color-primary);
+            color: var(--color-white);
+            border: none;
+            border-radius: 0;
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .form-submit:hover {
+            background: var(--color-primary-dark);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .nav-tagline {
+                display: none;
+            }
+
+            .retro-banner-content {
+                gap: 10px;
+            }
+
+            .retro-text {
+                font-size: 0.85rem;
+                letter-spacing: 2px;
+            }
+
+            .retro-text-secondary {
+                display: none;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+
+            .hero-visual {
+                order: -1;
+            }
+
+            .problem-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .solution-features {
+                grid-template-columns: 1fr;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
+            .exp-info-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .experiencias-hero {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .exp-card-stack {
+                height: 300px;
+                max-width: 350px;
+                margin: 0 auto;
+            }
+
+            .how-steps {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .flow-diagram {
+                flex-direction: column;
+            }
+
+            .flow-arrow {
+                transform: rotate(90deg);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-brand {
+                padding: 10px 16px;
+            }
+
+            .nav-brand::before {
+                display: none;
+            }
+
+            .logo {
+                font-size: 1.4rem;
+            }
+
+            .logo-subtitle {
+                font-size: 0.6rem;
+            }
+
+            .nav-cta {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+
+            .retro-banner {
+                top: 52px;
+                padding: 6px 0;
+            }
+
+            .retro-text {
+                font-size: 0.75rem;
+                letter-spacing: 1px;
+            }
+
+            .retro-divider {
+                display: none;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+
+            .hero-stats {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .hero-ctas {
+                flex-direction: column;
+            }
+
+            .btn-primary,
+            .btn-secondary {
+                text-align: center;
+            }
+
+            .pricing-tabs {
+                flex-direction: column;
+                max-width: 300px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .exp-info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .exp-hero-features {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .exp-feature {
+                justify-content: center;
+            }
+
+            .exp-card-stack {
+                height: 380px;
+            }
+
+            .exp-card {
+                width: 250px;
+            }
+
+            .exp-card-1 {
+                left: 10px;
+            }
+
+            .exp-card-2 {
+                left: 50px;
+            }
+
+            .exp-card-3 {
+                left: 20px;
+            }
+
+            .how-steps {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .exp-how-it-works {
+                padding: 32px 24px;
+            }
+
+            .comparison-table {
+                overflow-x: auto;
+            }
+
+            .comparison-table table {
+                min-width: 600px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 16px;
+                text-align: center;
+            }
+
+            .modal-content {
+                padding: 32px 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation - Retro 60s Style -->
+    <nav class="nav" id="nav">
+        <div class="container">
+            <div class="nav-content">
+                <a href="#" class="nav-brand">
+                    <div>
+                        <span class="logo">San Luis Way</span>
+                        <span class="logo-subtitle">B2B Hub</span>
+                    </div>
+                </a>
+                <div class="nav-tagline">¡Únete al Futuro de San Luis Potosí!</div>
+                <a href="#contacto" class="nav-cta" onclick="openModal(); return false;">¡Contáctanos Hoy!</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Retro Promo Banner -->
+    <div class="retro-banner">
+        <div class="retro-banner-content">
+            <span class="retro-star">★</span>
+            <span class="retro-text">¡OPORTUNIDAD ÚNICA!</span>
+            <span class="retro-divider">•</span>
+            <span class="retro-text-secondary">Sé Parte del Directorio #1 de SLP</span>
+            <span class="retro-divider">•</span>
+            <span class="retro-text">¡ÚNETE HOY!</span>
+            <span class="retro-star">★</span>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="hero-badge">Alianzas Estratégicas B2B</div>
+                    <h1>Conecta tu negocio con <span>la comunidad internacional</span> de SLP</h1>
+                    <p class="hero-subtitle">Únete al ecosistema digital que posiciona restaurantes y venues frente a profesionales internacionales, nómadas digitales y turistas que buscan experiencias de calidad.</p>
+                    <div class="hero-ctas">
+                        <a href="#paquetes" class="btn-primary">Ver Paquetes →</a>
+                        <a href="#beneficios" class="btn-secondary">Conocer Beneficios</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="hero-card">
+                        <div class="floating-badge top">✓ Verificado por Locales</div>
+                        <div class="floating-badge bottom">🌎 Multilingüe 4 idiomas</div>
+                        <div class="hero-card-header">
+                            <div class="hero-card-icon">🏆</div>
+                            <div>
+                                <div class="hero-card-title">Circle of Trust</div>
+                                <div class="hero-card-subtitle">Curado • Verificado • Local</div>
+                            </div>
+                        </div>
+                        <div class="hero-stats">
+                            <div class="stat">
+                                <div class="stat-number">186+</div>
+                                <div class="stat-label">Páginas Activas</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number">16+</div>
+                                <div class="stat-label">Categorías</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number">#1</div>
+                                <div class="stat-label">Meta SEO</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="text-center">
+                <h2>El Problema que Resolvemos</h2>
+                <p style="max-width: 600px; margin: 0 auto;">Tu negocio es excelente, pero los clientes internacionales no te encuentran.</p>
+            </div>
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <div class="problem-icon">🔍</div>
+                    <h3>Invisibilidad Digital</h3>
+                    <p>Expatriados buscan "best restaurants SLP" en Google y tu negocio no aparece porque no tienes contenido optimizado en inglés.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">🌐</div>
+                    <h3>Barrera de Idioma</h3>
+                    <p>Las plataformas genéricas como TripAdvisor no te posicionan localmente y crear contenido multilingüe requiere inversión significativa.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">🎯</div>
+                    <h3>Mercado Desconectado</h3>
+                    <p>Miles de profesionales internacionales con alto poder adquisitivo viven en SLP pero no saben que existes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="section">
+        <div class="container">
+            <div class="solution-header text-center">
+                <div class="trust-badge">
+                    <span class="trust-badge-icon">🛡️</span>
+                    <span>Circle of Trust - Información Verificada y Actualizada</span>
+                </div>
+                <h2>San Luis Way es tu Solución</h2>
+                <p>La primera y única plataforma multilingüe especializada en San Luis Potosí. Nos comprometemos a ser una fuente creíble: verificamos cada dato, hacemos fact-check de nuestras fuentes y mantenemos todo actualizado.</p>
+            </div>
+            <div class="solution-features">
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <div>
+                        <h4>Perfil Profesional Bilingüe</h4>
+                        <p>Traducimos y optimizamos tu presencia para que aparezcas cuando busquen en inglés o español.</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">✅</div>
+                    <div>
+                        <h4>Información Verificada</h4>
+                        <p>Hacemos fact-check de todas las fuentes y mantenemos la información actualizada constantemente.</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <div>
+                        <h4>Analytics Detallados</h4>
+                        <p>Conoce cuántas personas vieron tu perfil, de qué países son y qué buscaban.</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📧</div>
+                    <div>
+                        <h4>Newsletter Semanal</h4>
+                        <p>Tu negocio destacado frente a miles de suscriptores activos que buscan experiencias.</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">✍️</div>
+                    <div>
+                        <h4>Contenido SEO Permanente</h4>
+                        <p>Artículos optimizados que rankean en Google y atraen clientes durante años.</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏅</div>
+                    <div>
+                        <h4>Badge "Verificado por Locales"</h4>
+                        <p>Credibilidad instantánea ante extranjeros que no conocen la ciudad.</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔍</div>
+                    <div>
+                        <h4>Fuente Creíble de Opinión</h4>
+                        <p>Nos comprometemos a ser una referencia confiable con contenido honesto y actualizado.</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <div>
+                        <h4>Comunidad Activa</h4>
+                        <p>Acceso a nuestra comunidad de expats en Discord, eventos y networking.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Advantage Section -->
+    <section class="section tech-section">
+        <div class="container">
+            <div class="tech-header">
+                <div class="tech-badge">
+                    <span>⚡</span>
+                    <span>Tecnología de Vanguardia</span>
+                </div>
+                <h2>Potenciado por IA y Respaldado por Google</h2>
+                <p>No improvisamos. Usamos las herramientas más avanzadas del mercado para garantizar que tu inversión genere resultados reales.</p>
+            </div>
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <div class="tech-card-icon">🤖</div>
+                    <h4>Optimización con IA</h4>
+                    <p>Utilizamos algoritmos de inteligencia artificial para analizar y optimizar cada pieza de contenido, asegurando máximo alcance y relevancia para tu audiencia objetivo.</p>
+                    <div class="tech-card-highlight">
+                        <span>Contenido que convierte</span>
+                    </div>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">🎯</div>
+                    <h4>Campañas de Alto Impacto</h4>
+                    <p>Cada campaña está diseñada y optimizada para maximizar el retorno de inversión. Análisis continuo, ajustes en tiempo real y resultados medibles.</p>
+                    <div class="tech-card-highlight">
+                        <span>ROI maximizado</span>
+                    </div>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">🔷</div>
+                    <h4>Asesoría Google</h4>
+                    <p>Trabajamos directamente con el equipo de Google para implementar las mejores prácticas en SEO, Ads y Analytics. Conocimiento de primera mano.</p>
+                    <div class="tech-card-highlight">
+                        <span>Respaldo oficial</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="section section-alt" id="beneficios">
+        <div class="container">
+            <div class="benefits-grid">
+                <div class="benefits-content">
+                    <h2>¿Por Qué Elegirnos?</h2>
+                    <p>No somos un directorio más. Somos tu socio estratégico para capturar el mercado internacional.</p>
+                    <ul class="benefit-list">
+                        <li class="benefit-item">
+                            <span class="benefit-check">✓</span>
+                            <div class="benefit-text">
+                                <h4>Océano Azul en Inglés</h4>
+                                <p>Cero competencia seria. Quien se suba ahora, se queda arriba en Google.</p>
+                            </div>
+                        </li>
+                        <li class="benefit-item">
+                            <span class="benefit-check">✓</span>
+                            <div class="benefit-text">
+                                <h4>Información Verificada y Fact-Checked</h4>
+                                <p>Cada dato es verificado. Somos una fuente creíble que los usuarios confían.</p>
+                            </div>
+                        </li>
+                        <li class="benefit-item">
+                            <span class="benefit-check">✓</span>
+                            <div class="benefit-text">
+                                <h4>Captamos Antes de que Lleguen</h4>
+                                <p>Nuestros ads llegan a expats cuando reciben su oferta de trabajo, antes de empacar.</p>
+                            </div>
+                        </li>
+                        <li class="benefit-item">
+                            <span class="benefit-check">✓</span>
+                            <div class="benefit-text">
+                                <h4>Curado, No Masivo</h4>
+                                <p>Limitamos negocios por categoría. Calidad sobre cantidad.</p>
+                            </div>
+                        </li>
+                        <li class="benefit-item">
+                            <span class="benefit-check">✓</span>
+                            <div class="benefit-text">
+                                <h4>Contenido Siempre Actualizado</h4>
+                                <p>Mantenemos la información al día para que tus clientes siempre encuentren datos correctos.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="benefits-visual">
+                    <div class="benefits-image">
+                        <h3 style="font-size: 1.5rem; margin-bottom: 24px; color: white;">Tu Audiencia Objetivo</h3>
+                        <div class="audience-card">
+                            <h4>🏢 Expatriados Corporativos</h4>
+                            <p>BMW, GM, Continental - salarios internacionales, alto poder adquisitivo.</p>
+                        </div>
+                        <div class="audience-card">
+                            <h4>💻 Nómadas Digitales</h4>
+                            <p>Freelancers con ingresos en USD/EUR buscando calidad de vida.</p>
+                        </div>
+                        <div class="audience-card">
+                            <h4>✈️ Turistas Internacionales</h4>
+                            <p>Visitantes explorando el Bajío que buscan experiencias auténticas.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investment Model Section -->
+    <section class="section">
+        <div class="container">
+            <div class="investment-intro text-center">
+                <h2>Modelo de Crecimiento Compartido</h2>
+                <p>Tu inversión no solo paga tu perfil. Impulsa todo el ecosistema que nos lleva al #1 de Google.</p>
+            </div>
+            <div class="investment-diagram">
+                <div class="flow-diagram">
+                    <div class="flow-step">
+                        <div class="flow-icon">💰</div>
+                        <h4>Tu Membresía</h4>
+                        <p>Inversión mensual</p>
+                    </div>
+                    <span class="flow-arrow">→</span>
+                    <div class="flow-step highlight">
+                        <div class="flow-icon">📈</div>
+                        <h4>40% Marketing</h4>
+                        <p>Google Ads + SEO</p>
+                    </div>
+                    <span class="flow-arrow">→</span>
+                    <div class="flow-step">
+                        <div class="flow-icon">🎯</div>
+                        <h4>Más Tráfico</h4>
+                        <p>Visitantes internacionales</p>
+                    </div>
+                    <span class="flow-arrow">→</span>
+                    <div class="flow-step">
+                        <div class="flow-icon">🏆</div>
+                        <h4>Más Clientes</h4>
+                        <p>Para tu negocio</p>
+                    </div>
+                </div>
+                <div class="investment-highlight">
+                    <h3>El 40% de cada membresía se reinvierte en posicionamiento</h3>
+                    <p>Entre más socios se unan, más fuerte es la plataforma para todos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="section section-alt" id="paquetes">
+        <div class="container">
+            <div class="text-center" style="margin-bottom: 48px;">
+                <h2>Paquetes de Membresía</h2>
+                <p>Elige el plan que mejor se adapte a tu negocio</p>
+            </div>
+            
+            <div class="pricing-tabs">
+                <button class="tab-btn active" onclick="showPricing('restaurantes')">🍽️ Restaurantes</button>
+                <button class="tab-btn" onclick="showPricing('venues')">🎉 Venues de Eventos</button>
+                <button class="tab-btn" onclick="showPricing('experiencias')">🏠 Anfitriones & Socios</button>
+            </div>
+
+            <!-- Restaurantes Pricing -->
+            <div class="pricing-grid" id="pricing-restaurantes">
+                <div class="pricing-card">
+                    <div class="pricing-name">Descubierto</div>
+                    <p class="pricing-desc">Para comenzar tu presencia digital</p>
+                    <div class="pricing-price">
+                        <span class="price-amount">$1,000</span>
+                        <span class="price-period">MXN/mes</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>Perfil multilingüe completo</li>
+                        <li>Badge "Verificado por Locales"</li>
+                        <li>Listado en directorio</li>
+                        <li>Traducción profesional</li>
+                        <li>Integración Google Maps</li>
+                    </ul>
+                    <button class="pricing-cta" onclick="openModal('Descubierto - Restaurantes')">Empezar Ahora</button>
+                </div>
+                <div class="pricing-card featured">
+                    <div class="pricing-name">Destacado</div>
+                    <p class="pricing-desc">Máxima visibilidad y alcance</p>
+                    <div class="pricing-price">
+                        <span class="price-amount">$1,700</span>
+                        <span class="price-period">MXN/mes</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>Todo de Descubierto +</li>
+                        <li>Posición premium en búsquedas</li>
+                        <li>1 feature en newsletter/mes</li>
+                        <li>Analytics de visitantes</li>
+                        <li>Soporte prioritario</li>
+                    </ul>
+                    <button class="pricing-cta" onclick="openModal('Destacado - Restaurantes')">Empezar Ahora</button>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-name">Embajador</div>
+                    <p class="pricing-desc">El paquete completo para líderes</p>
+                    <div class="pricing-price">
+                        <span class="price-amount">$3,000</span>
+                        <span class="price-period">MXN/mes</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>Todo de Destacado +</li>
+                        <li>Artículo SEO dedicado</li>
+                        <li>Inclusión en guías temáticas</li>
+                        <li>Badge "Expat Favorite"</li>
+                        <li>Promociones exclusivas</li>
+                    </ul>
+                    <button class="pricing-cta" onclick="openModal('Embajador - Restaurantes')">Empezar Ahora</button>
+                </div>
+            </div>
+
+            <!-- Venues Pricing (Hidden by default) -->
+            <div class="pricing-grid" id="pricing-venues" style="display: none;">
+                <div class="pricing-card">
+                    <div class="pricing-name">Venue Básico</div>
+                    <p class="pricing-desc">Presencia profesional para tu venue</p>
+                    <div class="pricing-price">
+                        <span class="price-amount">$400</span>
+                        <span class="price-period">MXN/mes</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>Perfil con galería completa</li>
+                        <li>Información de capacidad</li>
+                        <li>Badge "Verificado"</li>
+                        <li>Traducción multilingüe</li>
+                        <li>Listado en directorio</li>
+                    </ul>
+                    <button class="pricing-cta" onclick="openModal('Básico - Venues')">Empezar Ahora</button>
+                </div>
+                <div class="pricing-card featured">
+                    <div class="pricing-name">Venue Pro</div>
+                    <p class="pricing-desc">Destaca entre la competencia</p>
+                    <div class="pricing-price">
+                        <span class="price-amount">$1,200</span>
+                        <span class="price-period">MXN/mes</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>Todo de Básico +</li>
+                        <li>Destacado en búsquedas</li>
+                        <li>2 features en newsletter/año</li>
+                        <li>Analytics de consultas</li>
+                        <li>Formulario de contacto</li>
+                    </ul>
+                    <button class="pricing-cta" onclick="openModal('Pro - Venues')">Empezar Ahora</button>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-name">Venue Elite</div>
+                    <p class="pricing-desc">Para venues de alto nivel</p>
+                    <div class="pricing-price">
+                        <span class="price-amount">$2,500</span>
+                        <span class="price-period">MXN/mes</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>Todo de Pro +</li>
+                        <li>Landing page SEO dedicada</li>
+                        <li>Leads calificados directos</li>
+                        <li>Relocation partners</li>
+                        <li>Cotizaciones en inglés</li>
+                    </ul>
+                    <button class="pricing-cta" onclick="openModal('Elite - Venues')">Empezar Ahora</button>
+                </div>
+            </div>
+
+            <!-- Experiencias Centro Pricing - B2B (Hidden by default) -->
+            <div class="pricing-grid experiencias-grid" id="pricing-experiencias" style="display: none;">
+                <!-- Anfitriones Column -->
+                <div class="pricing-card">
+                    <div class="pricing-name">Anfitrión Afiliado</div>
+                    <p class="pricing-desc">Tu depto en nuestra red de staycations</p>
+                    <div class="pricing-price">
+                        <span class="price-amount">15%</span>
+                        <span class="price-period">comisión por reserva</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>Listado en plataforma San Luis Way</li>
+                        <li>Nosotros traemos los huéspedes</li>
+                        <li>Itinerario curado para tus huéspedes</li>
+                        <li>Conexión con restaurantes afiliados</li>
+                        <li>Tú manejas check-in, limpieza y operación</li>
+                        <li>Sin cuota mensual fija</li>
+                    </ul>
+                    <button class="pricing-cta" onclick="openModal('Anfitrión Afiliado')">Registrar mi Depto</button>
+                </div>
+                <div class="pricing-card featured">
+                    <div class="pricing-name">Anfitrión Destacado</div>
+                    <p class="pricing-desc">Máxima visibilidad y prioridad</p>
+                    <div class="pricing-price">
+                        <span class="price-amount">$500</span>
+                        <span class="price-period">MXN/mes + 12% comisión</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>Todo de Afiliado +</li>
+                        <li>Fotografía profesional de tu espacio</li>
+                        <li>Posición destacada en búsquedas</li>
+                        <li>Prioridad en asignación de huéspedes</li>
+                        <li>Itinerarios premium personalizados</li>
+                        <li>Incluye entradas a eventos para huéspedes</li>
+                        <li>Feature en newsletter mensual</li>
+                    </ul>
+                    <button class="pricing-cta" onclick="openModal('Anfitrión Destacado')">Quiero Prioridad</button>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-name">Socio Experiencias</div>
+                    <p class="pricing-desc">Restaurantes, cafés, galerías, tours</p>
+                    <div class="pricing-price">
+                        <span class="price-amount">$0</span>
+                        <span class="price-period">costo de entrada</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>Tu negocio en itinerarios de staycation</li>
+                        <li>Huéspedes pre-calificados llegan a ti</li>
+                        <li>Reservaciones coordinadas por nosotros</li>
+                        <li>Perfil en directorio San Luis Way</li>
+                        <li>Tú operas tu negocio normalmente</li>
+                        <li>Comisión 10% solo por consumo referido</li>
+                    </ul>
+                    <button class="pricing-cta" onclick="openModal('Socio Experiencias')">Unirme a la Red</button>
+                </div>
+            </div>
+
+            <!-- Experiencias B2B Info Box -->
+            <div class="experiencias-info" id="experiencias-info" style="display: none;">
+                <div class="exp-info-grid">
+                    <div class="exp-info-card">
+                        <div class="exp-info-icon">🏠</div>
+                        <h4>Dueños de Departamentos</h4>
+                        <p>Tú operas tu propiedad como siempre. Nosotros te enviamos huéspedes y les armamos el itinerario perfecto.</p>
+                    </div>
+                    <div class="exp-info-card">
+                        <div class="exp-info-icon">🍽️</div>
+                        <h4>Restaurantes & Cafés</h4>
+                        <p>Recibe comensales los fines de semana. Nosotros reservamos, tú atiendes como siempre.</p>
+                    </div>
+                    <div class="exp-info-card">
+                        <div class="exp-info-icon">🎨</div>
+                        <h4>Galerías & Museos</h4>
+                        <p>Sé parte del circuito cultural. Compramos entradas para los huéspedes, tú ofreces la experiencia.</p>
+                    </div>
+                    <div class="exp-info-card">
+                        <div class="exp-info-icon">🚶</div>
+                        <h4>Tours & Experiencias</h4>
+                        <p>¿Ofreces tours, clases, catas? Te conectamos con familias que buscan exactamente eso.</p>
+                    </div>
+                </div>
+                
+                <!-- How it works -->
+                <div class="exp-how-it-works">
+                    <h3>¿Cómo Funciona el Modelo?</h3>
+                    <div class="how-steps">
+                        <div class="how-step">
+                            <div class="how-step-number">1</div>
+                            <div class="how-step-content">
+                                <h4>Nosotros Vendemos</h4>
+                                <p>Marketing digital y campañas para atraer familias que quieren una escapada al centro.</p>
+                            </div>
+                        </div>
+                        <div class="how-step">
+                            <div class="how-step-number">2</div>
+                            <div class="how-step-content">
+                                <h4>Armamos el Itinerario</h4>
+                                <p>Creamos la experiencia perfecta con lugares de nuestro directorio de afiliados.</p>
+                            </div>
+                        </div>
+                        <div class="how-step">
+                            <div class="how-step-number">3</div>
+                            <div class="how-step-content">
+                                <h4>Tú Operas</h4>
+                                <p>Check-in, limpieza, atención al cliente - tu negocio, tus reglas, tu calidad.</p>
+                            </div>
+                        </div>
+                        <div class="how-step">
+                            <div class="how-step-number">4</div>
+                            <div class="how-step-content">
+                                <h4>Todos Ganan</h4>
+                                <p>Tú recibes clientes sin gastar en marketing. Nosotros crecemos el ecosistema.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exp-cta-box">
+                    <h3>¿Tienes un espacio o negocio en San Luis Potosí?</h3>
+                    <p>Nosotros traemos los clientes y armamos la experiencia. Tú haces lo que mejor sabes hacer: operar tu negocio.</p>
+                    <button class="btn-primary" onclick="openModal('Experiencias Centro')">Quiero Saber Más →</button>
+                </div>
+            </div>
+
+            <!-- Comparison Table -->
+            <div class="comparison-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Aspecto</th>
+                            <th>Sin San Luis Way</th>
+                            <th>Con San Luis Way</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Visibilidad internacional</strong></td>
+                            <td class="check-no">Casi nula</td>
+                            <td class="check-yes">Posición privilegiada en inglés ✓</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Costo de Google Ads propio</strong></td>
+                            <td class="check-no">$3,000-10,000 MXN/mes (solo para ti)</td>
+                            <td class="check-yes">Incluido en membresía ✓</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Contenido en inglés</strong></td>
+                            <td class="check-no">Pagar traductor + copywriter</td>
+                            <td class="check-yes">Incluido ✓</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Credibilidad con expats</strong></td>
+                            <td class="check-no">Construir desde cero</td>
+                            <td class="check-yes">Circle of Trust instantáneo ✓</td>
+                        </tr>
+                        <tr>
+                            <td><strong>SEO para tu negocio</strong></td>
+                            <td class="check-no">Años de trabajo o agencia costosa</td>
+                            <td class="check-yes">Artículos que rankean ✓</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experiencias Centro Section - B2B -->
+    <section class="section experiencias-section">
+        <div class="container">
+            <div class="experiencias-hero">
+                <div class="exp-hero-content">
+                    <div class="exp-hero-badge">🆕 Nueva Línea de Negocio</div>
+                    <h2>Experiencias San Luis Potosí</h2>
+                    <p class="exp-hero-subtitle">Vendemos paquetes de "staycation" a familias de los suburbios. <strong>Nosotros traemos los clientes y armamos el itinerario. Tú operas tu negocio como siempre.</strong></p>
+                    <div class="exp-hero-features">
+                        <div class="exp-feature">
+                            <span class="exp-feature-icon">🏠</span>
+                            <span>Anfitriones de Deptos</span>
+                        </div>
+                        <div class="exp-feature">
+                            <span class="exp-feature-icon">🍽️</span>
+                            <span>Restaurantes & Cafés</span>
+                        </div>
+                        <div class="exp-feature">
+                            <span class="exp-feature-icon">🎨</span>
+                            <span>Galerías & Experiencias</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="exp-hero-visual">
+                    <div class="exp-card-stack">
+                        <div class="exp-card exp-card-1">
+                            <div class="exp-card-day">Nosotros</div>
+                            <div class="exp-card-content">
+                                <strong>Marketing + Itinerarios</strong>
+                                <p>Atraemos clientes y diseñamos la experiencia perfecta</p>
+                            </div>
+                        </div>
+                        <div class="exp-card exp-card-2">
+                            <div class="exp-card-day">Tú</div>
+                            <div class="exp-card-content">
+                                <strong>Operación + Calidad</strong>
+                                <p>Manejas tu negocio con tus estándares de siempre</p>
+                            </div>
+                        </div>
+                        <div class="exp-card exp-card-3">
+                            <div class="exp-card-day">Resultado</div>
+                            <div class="exp-card-content">
+                                <strong>Clientes Sin Esfuerzo</strong>
+                                <p>Huéspedes y comensales llegan solos a tu puerta</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section cta-section" id="contacto">
+        <div class="container">
+            <div class="cta-content text-center">
+                <h2>Los Primeros en Unirse Serán los Más Beneficiados</h2>
+                <p>Cuando San Luis Way sea la referencia obligada para todo extranjero que pise SLP, tú ya estarás posicionado.</p>
+                <div class="cta-buttons">
+                    <a href="#" class="btn-white" onclick="openModal(); return false;">Solicitar Información</a>
+                    <a href="mailto:sanluisway@waza.baby" class="btn-outline-white">sanluisway@waza.baby</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>San Luis <span>Way</span></h3>
+                    <p class="footer-subtitle">B2B Hub</p>
+                    <p>El hub digital que conecta negocios locales con la comunidad internacional de San Luis Potosí.</p>
+                </div>
+                <div>
+                    <h4>Enlaces</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://sanluisway.com" target="_blank">Visitar San Luis Way</a></li>
+                        <li><a href="#paquetes">Ver Paquetes</a></li>
+                        <li><a href="#beneficios">Beneficios</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Contacto</h4>
+                    <ul class="footer-links">
+                        <li><a href="mailto:sanluisway@waza.baby">sanluisway@waza.baby</a></li>
+                        <li><a href="https://sanluisway.com" target="_blank">www.sanluisway.com</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Materiales</h4>
+                    <ul class="footer-links">
+                        <li><a href="pitch-deck.html">Pitch Deck</a></li>
+                        <li><a href="one-pager.html">One Pager</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 San Luis Way. Todos los derechos reservados.</p>
+                <p>Construyamos Juntos el Futuro de SLP</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Contact Modal -->
+    <div class="modal-overlay" id="modal">
+        <div class="modal">
+            <button class="modal-close" onclick="closeModal()">✕</button>
+            <div class="modal-content">
+                <h2>Solicita Información</h2>
+                <p style="color: var(--color-text-light); margin-bottom: 32px;">Completa el formulario y nos pondremos en contacto contigo.</p>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="nombre">Nombre completo *</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="negocio">Nombre del negocio *</label>
+                        <input type="text" id="negocio" name="negocio" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="tipo">Tipo de negocio / interés *</label>
+                        <select id="tipo" name="tipo" required>
+                            <option value="">Seleccionar...</option>
+                            <option value="Restaurante / Café / Bar">Restaurante / Café / Bar</option>
+                            <option value="Venue de Eventos">Venue de Eventos</option>
+                            <option value="Departamento(s) / Airbnb">Tengo departamento(s) / Airbnb</option>
+                            <option value="Galería / Museo / Espacio Cultural">Galería / Museo / Espacio Cultural</option>
+                            <option value="Tour / Experiencia / Taller">Tour / Experiencia / Taller</option>
+                            <option value="Otro negocio">Otro tipo de negocio</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefono">Teléfono</label>
+                        <input type="tel" id="telefono" name="telefono">
+                    </div>
+                    <div class="form-group">
+                        <label for="paquete">Paquete de interés</label>
+                        <select id="paquete" name="paquete">
+                            <option value="Aún no lo sé">Aún no lo sé</option>
+                            <optgroup label="Restaurantes & Cafés">
+                                <option value="Descubierto ($1,000/mes)">Descubierto ($1,000/mes)</option>
+                                <option value="Destacado ($1,700/mes)">Destacado ($1,700/mes)</option>
+                                <option value="Embajador ($3,000/mes)">Embajador ($3,000/mes)</option>
+                            </optgroup>
+                            <optgroup label="Venues de Eventos">
+                                <option value="Venue Básico ($400/mes)">Venue Básico ($400/mes)</option>
+                                <option value="Venue Pro ($1,200/mes)">Venue Pro ($1,200/mes)</option>
+                                <option value="Venue Elite ($2,500/mes)">Venue Elite ($2,500/mes)</option>
+                            </optgroup>
+                            <optgroup label="Anfitriones - Departamentos">
+                                <option value="Anfitrión Afiliado (15% comisión)">Anfitrión Afiliado (15% comisión)</option>
+                                <option value="Anfitrión Destacado ($500/mes + 12%)">Anfitrión Destacado ($500/mes + 12%)</option>
+                            </optgroup>
+                            <optgroup label="Socios Experiencias">
+                                <option value="Socio Experiencias (10% comisión)">Socio Experiencias (10% comisión)</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="mensaje">Mensaje adicional</label>
+                        <textarea id="mensaje" name="mensaje" placeholder="Cuéntanos sobre tu negocio..."></textarea>
+                    </div>
+                    <button type="submit" class="form-submit" id="submitBtn">Enviar Solicitud</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Navigation scroll effect
+        const nav = document.getElementById('nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Pricing tabs
+        function showPricing(type) {
+            const tabs = document.querySelectorAll('.tab-btn');
+            const restaurantes = document.getElementById('pricing-restaurantes');
+            const venues = document.getElementById('pricing-venues');
+            const experiencias = document.getElementById('pricing-experiencias');
+            const experienciasInfo = document.getElementById('experiencias-info');
+            const comparisonTable = document.querySelector('.comparison-table');
+
+            tabs.forEach(tab => tab.classList.remove('active'));
+            
+            // Hide all
+            restaurantes.style.display = 'none';
+            venues.style.display = 'none';
+            experiencias.style.display = 'none';
+            experienciasInfo.style.display = 'none';
+            comparisonTable.style.display = 'block';
+            
+            if (type === 'restaurantes') {
+                tabs[0].classList.add('active');
+                restaurantes.style.display = 'grid';
+            } else if (type === 'venues') {
+                tabs[1].classList.add('active');
+                venues.style.display = 'grid';
+            } else if (type === 'experiencias') {
+                tabs[2].classList.add('active');
+                experiencias.style.display = 'grid';
+                experienciasInfo.style.display = 'block';
+                comparisonTable.style.display = 'none';
+            }
+        }
+
+        // Google Apps Script Web App URL (reemplazar con tu URL después de desplegar)
+        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxKmLWFd-8o2Duf-VHqtVE0ZJqUokcSmYbAw9DPpwdmjO_1ukJbpsatiAai0nXm4mbI/exec';
+
+        // Modal functions
+        function openModal(paquete = '') {
+            document.getElementById('modal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+
+            if (paquete) {
+                const select = document.getElementById('paquete');
+                const options = select.options;
+                for (let i = 0; i < options.length; i++) {
+                    if (options[i].text.toLowerCase().includes(paquete.toLowerCase().split(' ')[0])) {
+                        select.selectedIndex = i;
+                        break;
+                    }
+                }
+            }
+        }
+
+        function closeModal() {
+            document.getElementById('modal').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Close modal on overlay click
+        document.getElementById('modal').addEventListener('click', (e) => {
+            if (e.target === document.getElementById('modal')) {
+                closeModal();
+            }
+        });
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        // Form submission to Google Sheets
+        document.getElementById('contactForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const submitBtn = document.getElementById('submitBtn');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Enviando...';
+            submitBtn.disabled = true;
+
+            const formData = {
+                nombre: document.getElementById('nombre').value,
+                negocio: document.getElementById('negocio').value,
+                tipo: document.getElementById('tipo').value,
+                email: document.getElementById('email').value,
+                telefono: document.getElementById('telefono').value || 'No proporcionado',
+                paquete: document.getElementById('paquete').value,
+                mensaje: document.getElementById('mensaje').value || 'Sin mensaje',
+                fecha: new Date().toLocaleString('es-MX')
+            };
+
+            try {
+                await fetch(GOOGLE_SCRIPT_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                // Success
+                alert('¡Gracias por tu interés! Nos pondremos en contacto contigo pronto.');
+                document.getElementById('contactForm').reset();
+                closeModal();
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Hubo un error al enviar. Por favor intenta de nuevo o escríbenos a sanluisway@waza.baby');
+            } finally {
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && href !== '#contacto') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.problem-card, .feature-card, .pricing-card, .benefit-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

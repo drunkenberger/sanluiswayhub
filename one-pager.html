@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>San Luis Way B2B - One Pager</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Righteous&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #1E3A5F;
+            --color-primary-dark: #152A45;
+            --color-accent: #FFCB05;
+            --color-accent-light: #FFD700;
+            --color-bg: #FFF8F0;
+            --color-bg-alt: #FFF3E0;
+            --color-text: #1A1A1A;
+            --color-text-light: #5A5A5A;
+            --color-white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.5;
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .no-print {
+                display: none !important;
+            }
+            .one-pager {
+                max-width: 100%;
+                padding: 0;
+            }
+        }
+
+        .one-pager {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 24px;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+            color: var(--color-white);
+            padding: 32px;
+            margin-bottom: 32px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '★';
+            position: absolute;
+            top: 16px;
+            right: 24px;
+            font-size: 2rem;
+            color: var(--color-accent);
+            animation: spin 10s linear infinite;
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 24px;
+        }
+
+        .logo h1 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2.5rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            line-height: 1;
+        }
+
+        .logo span {
+            font-family: 'Righteous', cursive;
+            font-size: 0.8rem;
+            letter-spacing: 3px;
+            color: var(--color-accent);
+            display: block;
+            margin-top: 4px;
+        }
+
+        .tagline {
+            font-family: 'Righteous', cursive;
+            font-size: 1rem;
+            color: rgba(255,255,255,0.9);
+            max-width: 300px;
+            text-align: right;
+        }
+
+        /* Typography */
+        h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.75rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--color-primary-dark);
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 3px solid var(--color-accent);
+        }
+
+        h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.25rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--color-primary);
+            margin-bottom: 8px;
+        }
+
+        p {
+            font-size: 0.95rem;
+            color: var(--color-text-light);
+            margin-bottom: 12px;
+        }
+
+        /* Sections */
+        .section {
+            margin-bottom: 28px;
+        }
+
+        /* Two Columns */
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        @media (max-width: 700px) {
+            .two-col {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Stats Row */
+        .stats-row {
+            display: flex;
+            justify-content: space-around;
+            background: var(--color-primary);
+            color: var(--color-white);
+            padding: 20px;
+            margin-bottom: 28px;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2.5rem;
+            color: var(--color-accent);
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-family: 'Righteous', cursive;
+            font-size: 0.8rem;
+            opacity: 0.9;
+            margin-top: 4px;
+        }
+
+        /* Highlight Box */
+        .highlight-box {
+            background: linear-gradient(135deg, var(--color-accent), var(--color-accent-light));
+            padding: 20px 24px;
+            margin-bottom: 28px;
+        }
+
+        .highlight-box h3 {
+            color: var(--color-primary-dark);
+            margin-bottom: 8px;
+        }
+
+        .highlight-box p {
+            color: var(--color-primary-dark);
+            margin: 0;
+            font-family: 'Righteous', cursive;
+        }
+
+        /* Feature List */
+        .feature-list {
+            list-style: none;
+        }
+
+        .feature-list li {
+            padding: 8px 0;
+            padding-left: 24px;
+            position: relative;
+            font-size: 0.95rem;
+            border-bottom: 1px solid var(--color-bg-alt);
+        }
+
+        .feature-list li::before {
+            content: '★';
+            position: absolute;
+            left: 0;
+            color: var(--color-accent);
+            font-size: 0.9rem;
+        }
+
+        /* Pricing Table */
+        .pricing-table {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        @media (max-width: 700px) {
+            .pricing-table {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .pricing-item {
+            background: var(--color-white);
+            border: 2px solid var(--color-bg-alt);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .pricing-item.featured {
+            border-color: var(--color-accent);
+            position: relative;
+        }
+
+        .pricing-item.featured::before {
+            content: '★ Popular';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--color-accent);
+            color: var(--color-primary-dark);
+            padding: 2px 12px;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+        }
+
+        .pricing-item h3 {
+            margin-bottom: 4px;
+        }
+
+        .pricing-item .price {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2rem;
+            color: var(--color-primary);
+            line-height: 1;
+        }
+
+        .pricing-item .period {
+            font-family: 'Righteous', cursive;
+            font-size: 0.75rem;
+            color: var(--color-text-light);
+            margin-bottom: 12px;
+        }
+
+        .pricing-item ul {
+            list-style: none;
+            text-align: left;
+            font-size: 0.85rem;
+        }
+
+        .pricing-item ul li {
+            padding: 4px 0;
+            padding-left: 16px;
+            position: relative;
+        }
+
+        .pricing-item ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--color-accent);
+            font-weight: bold;
+        }
+
+        /* Flow Diagram */
+        .flow-diagram {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin: 16px 0;
+            flex-wrap: wrap;
+        }
+
+        .flow-step {
+            background: var(--color-primary);
+            color: var(--color-white);
+            padding: 12px 16px;
+            text-align: center;
+            min-width: 100px;
+        }
+
+        .flow-step.highlight {
+            background: var(--color-accent);
+            color: var(--color-primary-dark);
+        }
+
+        .flow-step h4 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            color: inherit;
+        }
+
+        .flow-step p {
+            font-size: 0.75rem;
+            margin: 0;
+            color: inherit;
+            opacity: 0.9;
+        }
+
+        .flow-arrow {
+            font-size: 1.25rem;
+            color: var(--color-accent);
+        }
+
+        /* Footer CTA */
+        .footer-cta {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+            color: var(--color-white);
+            padding: 24px;
+            text-align: center;
+            margin-top: 32px;
+        }
+
+        .footer-cta h2 {
+            color: var(--color-white);
+            border-bottom: none;
+            margin-bottom: 8px;
+        }
+
+        .footer-cta .email {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.5rem;
+            color: var(--color-accent);
+            text-decoration: none;
+            letter-spacing: 2px;
+        }
+
+        .footer-cta .email:hover {
+            color: var(--color-accent-light);
+        }
+
+        .footer-cta p {
+            color: rgba(255,255,255,0.8);
+            margin-top: 8px;
+            margin-bottom: 0;
+        }
+
+        /* Back Link */
+        .back-link {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--color-primary);
+            color: var(--color-white);
+            padding: 8px 16px;
+            text-decoration: none;
+            font-family: 'Bebas Neue', sans-serif;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            z-index: 100;
+        }
+
+        .back-link:hover {
+            background: var(--color-primary-dark);
+        }
+
+        /* Print Button */
+        .print-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--color-accent);
+            color: var(--color-primary-dark);
+            border: none;
+            padding: 12px 24px;
+            font-family: 'Bebas Neue', sans-serif;
+            letter-spacing: 1px;
+            font-size: 1rem;
+            cursor: pointer;
+            z-index: 100;
+        }
+
+        .print-btn:hover {
+            background: var(--color-accent-light);
+        }
+
+        /* Mini Section */
+        .mini-section {
+            background: var(--color-bg-alt);
+            padding: 16px;
+            margin-top: 16px;
+        }
+
+        .mini-section h4 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            color: var(--color-primary);
+            margin-bottom: 8px;
+        }
+
+        .mini-section p {
+            font-size: 0.85rem;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-link no-print">← Volver al Sitio</a>
+    <button class="print-btn no-print" onclick="window.print()">📄 Imprimir / PDF</button>
+
+    <div class="one-pager">
+        <!-- Header -->
+        <div class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>San Luis Way</h1>
+                    <span>B2B Hub • 2025</span>
+                </div>
+                <div class="tagline">
+                    La primera plataforma multilingüe que conecta negocios locales con la comunidad internacional de SLP
+                </div>
+            </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats-row">
+            <div class="stat">
+                <div class="stat-number">186+</div>
+                <div class="stat-label">Páginas Activas</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">16+</div>
+                <div class="stat-label">Categorías</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">4</div>
+                <div class="stat-label">Idiomas ES/EN/DE/JP</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">#1</div>
+                <div class="stat-label">SEO en Inglés</div>
+            </div>
+        </div>
+
+        <!-- Problem & Solution -->
+        <div class="two-col section">
+            <div>
+                <h2>El Problema</h2>
+                <p>Miles de profesionales internacionales con alto poder adquisitivo viven en San Luis Potosí, pero no saben que tu negocio existe.</p>
+                <ul class="feature-list">
+                    <li>Cero plataformas multilingües especializadas</li>
+                    <li>87% de expats buscan primero en inglés</li>
+                    <li>Tu Google Maps no aparece en búsquedas en inglés</li>
+                    <li>Mercado de alto valor completamente desatendido</li>
+                </ul>
+            </div>
+            <div>
+                <h2>La Solución</h2>
+                <p>San Luis Way es el único directorio verificado, multilingüe y curado de la ciudad. Nos comprometemos a ser una fuente creíble de información.</p>
+                <ul class="feature-list">
+                    <li>Perfil profesional multilingüe optimizado</li>
+                    <li>Información verificada y fact-checked</li>
+                    <li>Contenido actualizado constantemente</li>
+                    <li>Badge "Verificado por Locales"</li>
+                    <li>Posicionamiento SEO que rankea en Google</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Highlight -->
+        <div class="highlight-box">
+            <h3>★ Océano Azul en Inglés</h3>
+            <p>Cero competencia seria. Quien se suba ahora, se queda arriba en Google. Los primeros en unirse serán los más beneficiados.</p>
+        </div>
+
+        <!-- Business Model -->
+        <div class="section">
+            <h2>Modelo de Inversión Compartida</h2>
+            <p>El 40% de tu membresía se reinvierte directamente en marketing y SEO que beneficia a todos los miembros.</p>
+            <div class="flow-diagram">
+                <div class="flow-step">
+                    <h4>Tu Pago</h4>
+                    <p>Membresía</p>
+                </div>
+                <span class="flow-arrow">→</span>
+                <div class="flow-step highlight">
+                    <h4>40%</h4>
+                    <p>Marketing & SEO</p>
+                </div>
+                <span class="flow-arrow">→</span>
+                <div class="flow-step">
+                    <h4>Más Tráfico</h4>
+                    <p>Para todos</p>
+                </div>
+                <span class="flow-arrow">→</span>
+                <div class="flow-step">
+                    <h4>Clientes</h4>
+                    <p>Para ti</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pricing -->
+        <div class="section">
+            <h2>Paquetes para Restaurantes & Cafés</h2>
+            <div class="pricing-table">
+                <div class="pricing-item">
+                    <h3>Descubierto</h3>
+                    <div class="price">$1,000</div>
+                    <div class="period">MXN/mes</div>
+                    <ul>
+                        <li>Perfil multilingüe optimizado</li>
+                        <li>Badge "Verificado"</li>
+                        <li>Analytics básicos</li>
+                        <li>Soporte por email</li>
+                    </ul>
+                </div>
+                <div class="pricing-item featured">
+                    <h3>Destacado</h3>
+                    <div class="price">$1,700</div>
+                    <div class="period">MXN/mes</div>
+                    <ul>
+                        <li>Todo de Descubierto</li>
+                        <li>Posición prioritaria</li>
+                        <li>2 menciones newsletter/mes</li>
+                        <li>Contenido SEO dedicado</li>
+                        <li>Analytics avanzados</li>
+                    </ul>
+                </div>
+                <div class="pricing-item">
+                    <h3>Embajador</h3>
+                    <div class="price">$3,000</div>
+                    <div class="period">MXN/mes</div>
+                    <ul>
+                        <li>Todo de Destacado</li>
+                        <li>Artículo SEO mensual</li>
+                        <li>Promoción en redes</li>
+                        <li>Eventos exclusivos</li>
+                        <li>Account manager dedicado</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Experiencias -->
+        <div class="section">
+            <h2>Nueva Línea: Experiencias San Luis Potosí</h2>
+            <div class="two-col">
+                <div>
+                    <p>Vendemos paquetes de "staycation" a familias de los suburbios. Nosotros traemos los clientes y armamos el itinerario. <strong>Tú operas tu negocio como siempre.</strong></p>
+                    <div class="mini-section">
+                        <h4>Anfitrión Afiliado</h4>
+                        <p>15% comisión por reserva. Sin costo fijo.</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="mini-section">
+                        <h4>Anfitrión Destacado</h4>
+                        <p>$500 MXN/mes + 12% comisión. Incluye fotografía profesional, posición prioritaria y boletos de eventos para huéspedes.</p>
+                    </div>
+                    <div class="mini-section">
+                        <h4>Socio Experiencias</h4>
+                        <p>Restaurantes, galerías, tours. Sin costo de entrada, 10% comisión sobre consumo referido.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA Footer -->
+        <div class="footer-cta">
+            <h2>¿Listo para Crecer?</h2>
+            <a href="mailto:sanluisway@waza.baby" class="email">sanluisway@waza.baby</a>
+            <p>Contáctanos hoy y sé parte del Circle of Trust</p>
+        </div>
+    </div>
+</body>
+</html>

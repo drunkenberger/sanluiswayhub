@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>San Luis Way B2B - Pitch Deck</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Righteous&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #1E3A5F;
+            --color-primary-dark: #152A45;
+            --color-accent: #FFCB05;
+            --color-accent-light: #FFD700;
+            --color-bg: #FFF8F0;
+            --color-bg-alt: #FFF3E0;
+            --color-text: #1A1A1A;
+            --color-text-light: #5A5A5A;
+            --color-white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--color-primary-dark);
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Slide Container */
+        .slides-container {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 60px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+
+        .slide.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Slide Backgrounds */
+        .slide-dark {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+            color: var(--color-white);
+        }
+
+        .slide-light {
+            background: var(--color-bg);
+            color: var(--color-text);
+        }
+
+        .slide-light h1,
+        .slide-light h2,
+        .slide-light h3 {
+            color: var(--color-primary-dark);
+        }
+
+        .slide-light p {
+            color: var(--color-text-light);
+        }
+
+        .slide-light .stat-label {
+            color: var(--color-text-light);
+        }
+
+        .slide-accent {
+            background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-light) 100%);
+            color: var(--color-primary-dark);
+        }
+
+        /* Typography */
+        h1 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(3rem, 8vw, 6rem);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            line-height: 1;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+
+        h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(2rem, 5vw, 4rem);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(1.5rem, 3vw, 2.5rem);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+
+        .subtitle {
+            font-family: 'Righteous', cursive;
+            font-size: clamp(1rem, 2vw, 1.5rem);
+            letter-spacing: 1px;
+            opacity: 0.9;
+            margin-bottom: 32px;
+            text-align: center;
+        }
+
+        p {
+            font-family: 'Righteous', cursive;
+            font-size: clamp(1rem, 1.5vw, 1.25rem);
+            line-height: 1.6;
+            max-width: 800px;
+            text-align: center;
+        }
+
+        /* Decorative Elements */
+        .star {
+            color: var(--color-accent);
+            font-size: 2rem;
+            animation: spin 10s linear infinite;
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .badge {
+            display: inline-block;
+            background: var(--color-accent);
+            color: var(--color-primary-dark);
+            padding: 8px 24px;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+        }
+
+        .slide-dark .badge {
+            background: var(--color-accent);
+            color: var(--color-primary-dark);
+        }
+
+        .slide-light .badge {
+            background: var(--color-primary);
+            color: var(--color-white);
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 40px;
+            max-width: 900px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(3rem, 6vw, 5rem);
+            line-height: 1;
+            color: var(--color-accent);
+        }
+
+        .slide-light .stat-number {
+            color: var(--color-primary);
+        }
+
+        .stat-label {
+            font-family: 'Righteous', cursive;
+            font-size: 1rem;
+            opacity: 0.8;
+            margin-top: 8px;
+        }
+
+        /* Cards Grid */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 40px;
+            max-width: 1000px;
+            width: 100%;
+        }
+
+        .card {
+            background: var(--color-white);
+            padding: 32px;
+            text-align: center;
+            color: var(--color-text);
+        }
+
+        .slide-light .card {
+            background: var(--color-primary);
+            color: var(--color-white);
+        }
+
+        .slide-light .card h3 {
+            color: var(--color-white);
+        }
+
+        .slide-light .card p {
+            color: rgba(255,255,255,0.8);
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: 16px;
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+            color: var(--color-primary-dark);
+        }
+
+        .card p {
+            font-size: 1rem;
+            text-align: center;
+            color: var(--color-text-light);
+        }
+
+        /* Pricing Cards */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 40px;
+            max-width: 1000px;
+            width: 100%;
+        }
+
+        .pricing-card {
+            background: var(--color-white);
+            padding: 32px;
+            text-align: center;
+            position: relative;
+            color: var(--color-text);
+        }
+
+        .pricing-card.featured {
+            border: 4px solid var(--color-accent);
+            transform: scale(1.05);
+        }
+
+        .pricing-card.featured::before {
+            content: '★ Popular';
+            position: absolute;
+            top: -16px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--color-accent);
+            color: var(--color-primary-dark);
+            padding: 4px 16px;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        .pricing-name {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.75rem;
+            color: var(--color-primary-dark);
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .pricing-price {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 3rem;
+            color: var(--color-primary);
+            line-height: 1;
+        }
+
+        .pricing-period {
+            font-family: 'Righteous', cursive;
+            font-size: 0.9rem;
+            color: var(--color-text-light);
+            margin-bottom: 16px;
+        }
+
+        .pricing-features {
+            list-style: none;
+            text-align: left;
+            font-size: 0.95rem;
+        }
+
+        .pricing-features li {
+            padding: 8px 0;
+            border-bottom: 1px solid var(--color-bg-alt);
+            font-family: 'DM Sans', sans-serif;
+            color: var(--color-text);
+        }
+
+        .pricing-features li::before {
+            content: '✓ ';
+            color: var(--color-accent);
+            font-weight: bold;
+        }
+
+        /* Two Column Layout */
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            max-width: 1100px;
+            width: 100%;
+            align-items: center;
+        }
+
+        .two-col .col {
+            text-align: left;
+        }
+
+        .two-col h2 {
+            text-align: left;
+        }
+
+        .two-col p {
+            text-align: left;
+        }
+
+        /* List Style */
+        .feature-list {
+            list-style: none;
+            margin-top: 24px;
+        }
+
+        .feature-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 20px;
+            font-family: 'Righteous', cursive;
+            font-size: 1.1rem;
+        }
+
+        .feature-list li::before {
+            content: '★';
+            color: var(--color-accent);
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+
+        .slide-light .feature-list li::before {
+            color: var(--color-primary);
+        }
+
+        .slide-light .feature-list li {
+            color: var(--color-text);
+        }
+
+        /* Big Quote */
+        .big-quote {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            line-height: 1.2;
+            max-width: 900px;
+            text-align: center;
+            position: relative;
+        }
+
+        .big-quote::before {
+            content: '"';
+            font-size: 6rem;
+            position: absolute;
+            top: -40px;
+            left: -20px;
+            opacity: 0.3;
+        }
+
+        /* Flow Diagram */
+        .flow-diagram {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .flow-step {
+            background: rgba(255,255,255,0.15);
+            padding: 24px 32px;
+            text-align: center;
+            min-width: 150px;
+        }
+
+        .slide-light .flow-step {
+            background: var(--color-primary);
+            color: var(--color-white);
+        }
+
+        .flow-step.highlight {
+            background: var(--color-accent);
+            color: var(--color-primary-dark);
+        }
+
+        .flow-step h4 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.25rem;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+
+        .flow-step p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .flow-arrow {
+            font-size: 2rem;
+            color: var(--color-accent);
+        }
+
+        .slide-light .flow-arrow {
+            color: var(--color-primary);
+        }
+
+        /* Navigation */
+        .nav-controls {
+            position: fixed;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            z-index: 100;
+        }
+
+        .nav-btn {
+            width: 50px;
+            height: 50px;
+            background: var(--color-accent);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--color-primary-dark);
+            transition: transform 0.2s ease, background 0.2s ease;
+        }
+
+        .nav-btn:hover {
+            transform: scale(1.1);
+            background: var(--color-accent-light);
+        }
+
+        .slide-counter {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.25rem;
+            color: var(--color-white);
+            letter-spacing: 2px;
+        }
+
+        /* Progress Bar */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: var(--color-accent);
+            transition: width 0.3s ease;
+            z-index: 100;
+        }
+
+        /* Logo */
+        .logo-header {
+            position: fixed;
+            top: 24px;
+            left: 24px;
+            z-index: 100;
+        }
+
+        .logo-header a {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.5rem;
+            color: var(--color-white);
+            text-decoration: none;
+            letter-spacing: 2px;
+        }
+
+        .logo-header span {
+            font-family: 'Righteous', cursive;
+            font-size: 0.7rem;
+            display: block;
+            color: var(--color-accent);
+            letter-spacing: 3px;
+        }
+
+        /* Contact Slide */
+        .contact-info {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .contact-email {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(1.5rem, 3vw, 2.5rem);
+            color: var(--color-accent);
+            text-decoration: none;
+            letter-spacing: 2px;
+            display: block;
+            margin-bottom: 16px;
+        }
+
+        .contact-email:hover {
+            color: var(--color-accent-light);
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .slide {
+                padding: 40px 24px;
+            }
+
+            .stats-grid,
+            .cards-grid,
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .two-col {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .flow-diagram {
+                flex-direction: column;
+            }
+
+            .flow-arrow {
+                transform: rotate(90deg);
+            }
+
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .nav-controls {
+                bottom: 20px;
+            }
+
+            .nav-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-bar" id="progress"></div>
+
+    <div class="logo-header">
+        <a href="index.html">
+            San Luis Way
+            <span>B2B Hub</span>
+        </a>
+    </div>
+
+    <div class="slides-container">
+        <!-- Slide 1: Title -->
+        <div class="slide slide-dark active" data-slide="1">
+            <span class="star">★</span>
+            <h1>San Luis Way</h1>
+            <p class="subtitle">B2B Hub • Pitch Deck 2025</p>
+            <p>La primera plataforma multilingüe que conecta negocios locales con la comunidad internacional de San Luis Potosí</p>
+        </div>
+
+        <!-- Slide 2: Problem -->
+        <div class="slide slide-light" data-slide="2">
+            <div class="badge">El Problema</div>
+            <h2>Los Expatriados No Te Encuentran</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">0</div>
+                    <div class="stat-label">Plataformas multilingües en SLP</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">87%</div>
+                    <div class="stat-label">Expats buscan en inglés primero</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">$$$</div>
+                    <div class="stat-label">Alto poder adquisitivo desaprovechado</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: Solution -->
+        <div class="slide slide-dark" data-slide="3">
+            <div class="badge">La Solución</div>
+            <h2>San Luis Way es tu Puente</h2>
+            <p>El único directorio verificado, multilingüe y curado de San Luis Potosí. Información fact-checked y actualizada constantemente.</p>
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-icon">🌐</div>
+                    <h3>Multilingüe</h3>
+                    <p>Contenido en español, inglés, alemán y japonés</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">✅</div>
+                    <h3>Verificado</h3>
+                    <p>Fact-check de todas las fuentes</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🎯</div>
+                    <h3>Curado</h3>
+                    <p>Calidad sobre cantidad</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: Why Now -->
+        <div class="slide slide-accent" data-slide="4">
+            <div class="badge" style="background: var(--color-primary); color: var(--color-white);">¿Por Qué Ahora?</div>
+            <h2>Océano Azul en Inglés</h2>
+            <div class="big-quote">
+                Cero competencia seria. Quien se suba ahora, se queda arriba en Google.
+            </div>
+        </div>
+
+        <!-- Slide 5: Model -->
+        <div class="slide slide-light" data-slide="5">
+            <div class="badge">Modelo de Negocio</div>
+            <h2>Crecemos Juntos</h2>
+            <p>El 40% de tu membresía se reinvierte directamente en marketing y SEO que beneficia a todos.</p>
+            <div class="flow-diagram">
+                <div class="flow-step">
+                    <h4>Tu Pago</h4>
+                    <p>Membresía mensual</p>
+                </div>
+                <span class="flow-arrow">→</span>
+                <div class="flow-step highlight">
+                    <h4>40%</h4>
+                    <p>Marketing & SEO</p>
+                </div>
+                <span class="flow-arrow">→</span>
+                <div class="flow-step">
+                    <h4>Más Tráfico</h4>
+                    <p>Clientes para ti</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 6: Pricing -->
+        <div class="slide slide-dark" data-slide="6">
+            <div class="badge">Paquetes Restaurantes</div>
+            <h2>Invierte en tu Visibilidad</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-name">Descubierto</div>
+                    <div class="pricing-price">$1,000</div>
+                    <div class="pricing-period">MXN/mes</div>
+                    <ul class="pricing-features">
+                        <li>Perfil multilingüe optimizado</li>
+                        <li>Badge "Verificado"</li>
+                        <li>Analytics básicos</li>
+                    </ul>
+                </div>
+                <div class="pricing-card featured">
+                    <div class="pricing-name">Destacado</div>
+                    <div class="pricing-price">$1,700</div>
+                    <div class="pricing-period">MXN/mes</div>
+                    <ul class="pricing-features">
+                        <li>Todo de Descubierto</li>
+                        <li>Posición prioritaria</li>
+                        <li>2 menciones newsletter/mes</li>
+                        <li>Contenido SEO dedicado</li>
+                    </ul>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-name">Embajador</div>
+                    <div class="pricing-price">$3,000</div>
+                    <div class="pricing-period">MXN/mes</div>
+                    <ul class="pricing-features">
+                        <li>Todo de Destacado</li>
+                        <li>Artículo SEO mensual</li>
+                        <li>Redes sociales</li>
+                        <li>Eventos exclusivos</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 7: Experiencias -->
+        <div class="slide slide-light" data-slide="7">
+            <div class="badge">Nueva Línea</div>
+            <h2>Experiencias San Luis Potosí</h2>
+            <div class="two-col">
+                <div class="col">
+                    <p>Vendemos paquetes de "staycation" a familias de los suburbios. Nosotros traemos los clientes y armamos el itinerario.</p>
+                    <ul class="feature-list">
+                        <li>Tú operas tu negocio como siempre</li>
+                        <li>Sin inversión inicial</li>
+                        <li>Comisión solo por resultados</li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <div class="cards-grid" style="grid-template-columns: 1fr;">
+                        <div class="card">
+                            <h3>Anfitrión Afiliado</h3>
+                            <p>15% comisión por reserva</p>
+                        </div>
+                        <div class="card">
+                            <h3>Anfitrión Destacado</h3>
+                            <p>$500/mes + 12% comisión</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 8: Traction -->
+        <div class="slide slide-dark" data-slide="8">
+            <div class="badge">Tracción Actual</div>
+            <h2>Ya Estamos en Marcha</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">186+</div>
+                    <div class="stat-label">Páginas activas</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">16+</div>
+                    <div class="stat-label">Categorías</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">4</div>
+                    <div class="stat-label">Idiomas ES/EN/DE/JP</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 9: Advantage -->
+        <div class="slide slide-accent" data-slide="9">
+            <h2>El Primer Movedor Gana</h2>
+            <div class="big-quote">
+                Los primeros en unirse serán los más beneficiados. Cuando San Luis Way sea la referencia obligada para todo extranjero que pise SLP, tú ya estarás posicionado.
+            </div>
+        </div>
+
+        <!-- Slide 10: CTA -->
+        <div class="slide slide-dark" data-slide="10">
+            <span class="star">★</span>
+            <h1>¿Listo para Crecer?</h1>
+            <p class="subtitle">Únete al directorio #1 de San Luis Potosí</p>
+            <div class="contact-info">
+                <a href="mailto:sanluisway@waza.baby" class="contact-email">sanluisway@waza.baby</a>
+                <p>Contáctanos hoy y sé parte del Circle of Trust</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="nav-controls">
+        <button class="nav-btn" onclick="prevSlide()">←</button>
+        <span class="slide-counter"><span id="currentSlide">1</span> / <span id="totalSlides">10</span></span>
+        <button class="nav-btn" onclick="nextSlide()">→</button>
+    </div>
+
+    <script>
+        let currentSlide = 1;
+        const totalSlides = 10;
+
+        function showSlide(n) {
+            if (n < 1) n = totalSlides;
+            if (n > totalSlides) n = 1;
+            
+            currentSlide = n;
+            
+            document.querySelectorAll('.slide').forEach(slide => {
+                slide.classList.remove('active');
+            });
+            
+            document.querySelector(`[data-slide="${n}"]`).classList.add('active');
+            document.getElementById('currentSlide').textContent = n;
+            document.getElementById('progress').style.width = (n / totalSlides * 100) + '%';
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        function prevSlide() {
+            showSlide(currentSlide - 1);
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                e.preventDefault();
+                nextSlide();
+            } else if (e.key === 'ArrowLeft') {
+                e.preventDefault();
+                prevSlide();
+            }
+        });
+
+        // Touch/swipe support
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        document.addEventListener('touchstart', e => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        document.addEventListener('touchend', e => {
+            touchEndX = e.changedTouches[0].screenX;
+            if (touchStartX - touchEndX > 50) nextSlide();
+            if (touchEndX - touchStartX > 50) prevSlide();
+        });
+    </script>
+</body>
+</html>
