@@ -1654,6 +1654,82 @@
             margin: 0;
         }
 
+        /* FAQ Section */
+        .faq-section {
+            background: var(--color-bg);
+        }
+
+        .faq-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--color-white);
+            margin-bottom: 16px;
+            border: 1px solid rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 24px 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: none;
+            border: none;
+            cursor: pointer;
+            text-align: left;
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            color: var(--color-primary-dark);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: var(--transition);
+        }
+
+        .faq-question:hover {
+            background: var(--color-bg-alt);
+        }
+
+        .faq-question span {
+            flex: 1;
+            padding-right: 16px;
+        }
+
+        .faq-icon {
+            font-size: 1.5rem;
+            color: var(--color-accent);
+            transition: var(--transition);
+            font-style: normal;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .faq-answer-content {
+            padding: 0 32px 24px;
+            color: var(--color-text-light);
+            line-height: 1.7;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+
         /* CTA Section */
         .cta-section {
             background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
@@ -2835,6 +2911,95 @@
         </div>
     </section>
 
+    <!-- FAQ Section -->
+    <section class="section faq-section" id="faq">
+        <div class="container">
+            <div class="faq-header">
+                <h2>Preguntas Frecuentes</h2>
+                <p>Todo lo que necesitas saber sobre San Luis Way</p>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>¿Qué es San Luis Way exactamente?</span>
+                        <i class="faq-icon">+</i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            San Luis Way es la primera plataforma multilingüe especializada en San Luis Potosí que conecta negocios locales con la comunidad internacional: expatriados, nómadas digitales y turistas. Ofrecemos perfiles verificados, contenido SEO optimizado y campañas de marketing dirigidas para posicionar tu negocio frente a audiencias de alto valor.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>¿Cómo funciona el Programa de Fundadores?</span>
+                        <i class="faq-icon">+</i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            El Programa de Fundadores es una oferta exclusiva por tiempo limitado donde el 100% de tu suscripción ($5,000 MXN/mes) se invierte directamente en Google Ads promocionando tu negocio. Incluye todos los beneficios del paquete Embajador más un badge exclusivo de fundador y acceso prioritario a nuevas funciones. Una vez cerrado el programa, esta oferta no volverá.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>¿Cuánto tiempo tarda en verse resultados?</span>
+                        <i class="faq-icon">+</i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Tu perfil estará activo en 24-48 horas después de proporcionar la información. Los resultados de SEO empiezan a verse en 2-3 meses a medida que Google indexa el contenido. Las campañas de Google Ads generan tráfico inmediato desde el primer día.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>¿Puedo cancelar en cualquier momento?</span>
+                        <i class="faq-icon">+</i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Sí, no hay contratos de permanencia. Puedes cancelar tu membresía en cualquier momento. Sin embargo, te recomendamos mantenerla al menos 3-6 meses para ver los beneficios completos del posicionamiento SEO que construimos para tu negocio.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>¿Qué tipo de negocios pueden unirse?</span>
+                        <i class="faq-icon">+</i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Aceptamos restaurantes, cafés, bares, venues de eventos, departamentos para renta, galerías, museos, tours, experiencias y cualquier negocio en San Luis Potosí que quiera llegar a la comunidad internacional. Cada negocio pasa por un proceso de verificación para mantener la calidad de nuestro directorio.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>¿Cómo verifican los negocios?</span>
+                        <i class="faq-icon">+</i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Nuestro equipo local visita personalmente cada negocio, verifica la información proporcionada, toma fotografías profesionales y confirma la calidad del servicio. Solo los negocios que pasan esta verificación reciben el badge "Verificado por Locales" que genera confianza instantánea con los usuarios internacionales.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>¿En qué idiomas aparecerá mi negocio?</span>
+                        <i class="faq-icon">+</i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Tu perfil se traduce profesionalmente a 4 idiomas: español, inglés, alemán y japonés. Esto te permite aparecer en búsquedas internacionales y captar clientes que buscan en su idioma nativo antes de llegar a San Luis Potosí.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- CTA Section -->
     <section class="section cta-section" id="contacto">
         <div class="container">
@@ -3007,6 +3172,22 @@
 
         // Google Apps Script Web App URL (reemplazar con tu URL después de desplegar)
         const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxKmLWFd-8o2Duf-VHqtVE0ZJqUokcSmYbAw9DPpwdmjO_1ukJbpsatiAai0nXm4mbI/exec';
+
+        // FAQ Toggle
+        function toggleFaq(button) {
+            const faqItem = button.parentElement;
+            const isActive = faqItem.classList.contains('active');
+
+            // Close all FAQ items
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+            });
+
+            // Open clicked item if it wasn't active
+            if (!isActive) {
+                faqItem.classList.add('active');
+            }
+        }
 
         // Modal functions
         function openModal(paquete = '') {
