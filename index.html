@@ -272,15 +272,21 @@
             right: 0;
             z-index: 999;
             background: var(--color-accent);
-            padding: 12px 16px;
+            padding: 8px 0;
+            overflow: hidden;
         }
 
         .retro-banner-content {
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 12px;
-            flex-wrap: wrap;
+            gap: 16px;
+            animation: marquee 20s linear infinite;
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(0); }
         }
 
         .retro-star {
@@ -1905,16 +1911,12 @@
 
             .retro-banner {
                 top: 52px;
-                padding: 10px 12px;
+                padding: 6px 0;
             }
 
             .retro-text {
-                font-size: 0.7rem;
+                font-size: 0.75rem;
                 letter-spacing: 1px;
-            }
-
-            .retro-text-secondary {
-                display: none;
             }
 
             .retro-divider {
