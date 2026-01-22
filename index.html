@@ -177,6 +177,18 @@
             margin-top: 2px;
         }
 
+        .logo-image {
+            height: 60px; /* Increased size */
+            width: auto;
+            display: block;
+            animation: logoPulse 2s infinite alternate; /* Added animation */
+        }
+
+        @keyframes logoPulse {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.05); }
+        }
+
         .nav-tagline {
             font-family: 'Righteous', cursive;
             color: var(--color-accent);
@@ -2004,11 +2016,8 @@
         <div class="container">
             <div class="nav-content">
                 <a href="#" class="nav-brand">
-                    <div>
-                        <span class="logo">San Luis Way</span>
-                        <span class="logo-subtitle">B2B Hub</span>
-                    </div>
-                </a>
+                <img src="logo%20san%20luis%20way.jpeg" alt="San Luis Way Logo" class="logo-image">
+            </a>
                 <div class="nav-tagline">¡Únete al Futuro de San Luis Potosí!</div>
                 <a href="#contacto" class="nav-cta" onclick="openModal(); return false;">¡Contáctanos Hoy!</a>
             </div>
@@ -2038,7 +2047,7 @@
                     <p class="hero-subtitle">Únete al ecosistema digital que posiciona restaurantes y venues frente a profesionales internacionales, nómadas digitales y turistas que buscan experiencias de calidad.</p>
                     <div class="hero-ctas">
                         <a href="#paquetes" class="btn-primary">Ver Paquetes →</a>
-                        <a href="#beneficios" class="btn-secondary">Conocer Beneficios</a>
+                        <a href="https://cal.com/drunken-berger-drunkenberger-d4ldsl/15min" target="_blank" class="btn-secondary">📞 Agendar Llamada Gratis</a>
                     </div>
                 </div>
                 <div class="hero-visual">
@@ -2662,6 +2671,7 @@
                 <p>Cuando San Luis Way sea la referencia obligada para todo extranjero que pise SLP, tú ya estarás posicionado.</p>
                 <div class="cta-buttons">
                     <a href="#" class="btn-white" onclick="openModal(); return false;">Solicitar Información</a>
+                    <a href="https://cal.com/drunken-berger-drunkenberger-d4ldsl/15min" target="_blank" class="btn-white">📞 Agendar Llamada Gratis</a>
                     <a href="mailto:sanluisway@waza.baby" class="btn-outline-white">sanluisway@waza.baby</a>
                 </div>
             </div>
